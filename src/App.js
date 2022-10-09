@@ -1,8 +1,7 @@
 import React from 'react';
-import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import Home from './pages/Home/Home';
-import Garrafones from './pages/Garrafones';
+import Garrafones from './pages/Garrafones/Garrafones';
 import SideBar from './components/SideBar/SideBar';
 import BottomNav from './components/BottomNav/BottomNav'
 import useStyles from './styles'
