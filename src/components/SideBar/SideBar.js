@@ -1,7 +1,7 @@
 import React from "react";
 import { Typography, List, ListItem, ListItemButton, ListItemIcon, Box } from "@mui/material";
 import { AiOutlineHome } from 'react-icons/ai';
-import { GiWaterGallon } from 'react-icons/gi'
+import { GiWaterGallon } from 'react-icons/gi';
 import { useNavigate } from 'react-router-dom';
 import { MdWaterDrop } from 'react-icons/md'
 import useStyles from './styles'

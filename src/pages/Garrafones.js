@@ -4,7 +4,7 @@ import { Typography } from "@mui/material";
 const Garrafones = () => {
     return (
         <>
-            <Typography variant="h3">Garrafones</Typography>
+            <Typography variant="h4">Garrafones</Typography>
         </>
     );
 }
