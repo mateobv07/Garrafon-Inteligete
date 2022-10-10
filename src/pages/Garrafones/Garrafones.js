@@ -1,8 +1,9 @@
 import React, { useRef } from "react";
-import { Typography, Grid } from "@mui/material";
+import { Typography, Grid, Fab } from "@mui/material";
 import useStyles from './styles';
 import Garrafon from "../../components/Garrafon/Garrafon"; 
 import Slide from '@mui/material/Slide';
+import {BsPlus} from 'react-icons/bs';
 
 const Garrafones = () => {
     const styles = useStyles();
@@ -12,7 +13,11 @@ const Garrafones = () => {
 
     return (
         <div className={styles.mainContainer} ref={containerRef}>
-            <Typography variant="h4">Garrafones</Typography>
+            <Typography variant="h4">Garrafones 
+             <Fab color="primary" size="small" aria-label="add" sx={{ ml:2 }}>
+                <BsPlus size={42}/>
+            </Fab>
+            </Typography> 
             <Slide direction="up" in={checked} timeout={1000} container={containerRef.current}>
                 <Grid container justifyContent="center" spacing={3} mt={2} px={6}>
                     {grrafones.map((garrafon) => (
@@ -23,6 +28,7 @@ const Garrafones = () => {
                 </Grid>
             </Slide>
         </div>
+       
     );
 }
 

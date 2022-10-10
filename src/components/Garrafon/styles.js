@@ -15,6 +15,14 @@ export default makeStyles((theme) => ({
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
+    },
+    editName: {
+        width: '300px',
+        height: '180px',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+
     }
 
 }));
