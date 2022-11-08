@@ -5,7 +5,7 @@ import { GiWaterGallon } from 'react-icons/gi';
 import { useNavigate } from 'react-router-dom';
 import { MdWaterDrop } from 'react-icons/md'
 import { TbBottle } from 'react-icons/tb'
-
+import { BsGraphUp } from 'react-icons/bs'
 import useStyles from './styles'
 
 
@@ -44,6 +44,15 @@ const SideBar = () => {
                             <TbBottle size={22} color='#fbffff'/>
                         </ListItemIcon>
                         <Typography variant="h6" color='#fbffff'>Botellas</Typography>
+                    </ListItemButton>
+                </ListItem>
+
+                <ListItem disablePadding>
+                    <ListItemButton onClick={() => navigate('/datos')}>
+                        <ListItemIcon>
+                            <BsGraphUp size={22} color='#fbffff'/>
+                        </ListItemIcon>
+                        <Typography variant="h6" color='#fbffff'>Datos</Typography>
                     </ListItemButton>
                 </ListItem>
             </List>
