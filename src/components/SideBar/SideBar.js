@@ -4,6 +4,8 @@ import { AiOutlineHome } from 'react-icons/ai';
 import { GiWaterGallon } from 'react-icons/gi';
 import { useNavigate } from 'react-router-dom';
 import { MdWaterDrop } from 'react-icons/md'
+import { TbBottle } from 'react-icons/tb'
+
 import useStyles from './styles'
 
 
@@ -14,7 +16,7 @@ const SideBar = () => {
         <Box className={styles.sideBar} color="#4459e8" sx={{ boxShadow: 14 }}> 
             <div className={styles.titleContainer} onClick={() => navigate('/')}>
                 <MdWaterDrop size={37} color='#fbffff' />
-                <Typography variant="h4" color='#fbffff' >Nombre</Typography>
+                <Typography variant="h4" color='#fbffff'>weDrink</Typography>
             </div>
 
              <List>
@@ -33,6 +35,15 @@ const SideBar = () => {
                             <GiWaterGallon size={22} color='#fbffff'/>
                         </ListItemIcon>
                         <Typography variant="h6" color='#fbffff'>Garrafones</Typography>
+                    </ListItemButton>
+                </ListItem>
+
+                <ListItem disablePadding>
+                    <ListItemButton onClick={() => navigate('/botellas')}>
+                        <ListItemIcon>
+                            <TbBottle size={22} color='#fbffff'/>
+                        </ListItemIcon>
+                        <Typography variant="h6" color='#fbffff'>Botellas</Typography>
                     </ListItemButton>
                 </ListItem>
             </List>

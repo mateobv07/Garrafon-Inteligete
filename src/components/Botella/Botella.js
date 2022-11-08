@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Paper, Box, Typography, Dialog, TextField, Button } from "@mui/material";
 import useStyles from './styles';
 import {MdOutlineEdit} from 'react-icons/md';
-import ImagenGarrafon from '../../assets/garrafon.png'
+import ImagenBotella from '../../assets/bottle.png'
 
 const Garrafon = ({ name, amount }) => {
     const [editName, setEditName] = useState(false);
@@ -22,8 +22,8 @@ const Garrafon = ({ name, amount }) => {
                     <MdOutlineEdit size={24} onClick={() => setEditName(true)} style={{cursor: 'pointer'}}/>
                 </Box>
                 <Box className={styles.content} px={2}>
-                    <img src={ImagenGarrafon} alt="garrafon" className={styles.image}/>
-                    <Typography variant="h4" style={{ fontWeight: 600 }} color="#4459e8" mt={1}> {garrafonInfo.amount}% </Typography>
+                    <img src={ImagenBotella} alt="garrafon" className={styles.image}/>
+                    <Typography variant="subtitle1" style={{ fontWeight: 600 }} color="#4459e8" mt={1}> Ultimo refill: 10/08/2022 </Typography>
                 </Box>
             </Paper>
             <Dialog open={editName} onClose={() => setEditName(false)} >
