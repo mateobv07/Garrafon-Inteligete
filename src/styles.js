@@ -8,6 +8,13 @@ export default makeStyles((theme) => ({
             marginLeft: '240px',
             marginTop: '30px',
           },
+    },
+    authContainer: {
+        marginTop: '15px',
+        justifyContent: 'center',
+        [theme.breakpoints.up('md')]: {
+            marginTop: '30px',
+          },
     }
 
 }));
