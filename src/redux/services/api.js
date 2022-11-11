@@ -5,7 +5,7 @@ var test = "hello";
 export const waterApi = createApi({
     reducerPath: 'waterApi',
     baseQuery: fetchBaseQuery({
-        baseUrl: 'http://127.0.0.1:8000',
+        baseUrl: 'https://mateobernasconivagas.pythonanywhere.com',
         //prepareHeaders: (headers) => {
             //headers.set('Authorization', `Token ${test}`);
 
