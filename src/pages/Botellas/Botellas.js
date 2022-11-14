@@ -1,6 +1,8 @@
 import React, { useRef, useState } from "react";
 import { Grid, Fab, Paper, Typography, Dialog, TextField, Button } from "@mui/material";
-
+import { useGetBotellasQuery } from "../../redux/services/api"
+import { useSelector } from 'react-redux';
+import Loader from "../../components/loader";
 import useStyles from './styles';
 import Botella from "../../components/Botella/Botella"; 
 import Slide from '@mui/material/Slide';
@@ -10,10 +12,13 @@ const Botellas = () => {
     const styles = useStyles();
     const containerRef = useRef(null);
     const checked = true;
-    const botellas = [{name: 'Diario', amount: 39, id: 'csd131'}, {name: 'Deportes', amount: 80, id: '23131'}];
     const [addGarrafonInfo, setAddGarrafonInfo ] = useState({name: "", code: ""})
     const [add, setAdd] = useState(false);
 
+    const { data: botellas, isFetching } = useGetBotellasQuery();
+
+    if(isFetching) return <Loader title="Cargando sus botellas" />
+    console.log(botellas)
     return (
         <div className={styles.mainContainer} ref={containerRef}>
             <Typography variant="h4">Botellas 
@@ -25,7 +30,7 @@ const Botellas = () => {
                 <Grid container justifyContent="center" spacing={3} mt={2} px={6}>
                     {botellas.map((botella) => (
                         <Grid item xs={12} sm={6} lg={3} xl={2} key={botella.id}> 
-                            <Botella name={botella.name} id={botella.id} amount={botella.amount} />
+                            <Botella name={botella.name} id={botella.id} lastUpdate={botella.updated_at} />
                         </Grid>
                     ))}
                 </Grid>
