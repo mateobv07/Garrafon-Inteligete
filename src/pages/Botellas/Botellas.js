@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import { Grid, Fab, Paper, Typography, Dialog, TextField, Button } from "@mui/material";
 import { useGetBotellasQuery } from "../../redux/services/api"
 import { useSelector } from 'react-redux';
-import Loader from "../../components/loader";
+import Loader from "../../components/Loader/loader";
 import useStyles from './styles';
 import Botella from "../../components/Botella/Botella"; 
 import Slide from '@mui/material/Slide';
@@ -17,8 +17,8 @@ const Botellas = () => {
 
     const { data: botellas, isFetching } = useGetBotellasQuery();
 
-    if(isFetching) return <Loader title="Cargando sus botellas" />
-    console.log(botellas)
+    if(isFetching) return <Loader title="Cargando botellas..." />
+
     return (
         <div className={styles.mainContainer} ref={containerRef}>
             <Typography variant="h4">Botellas 
