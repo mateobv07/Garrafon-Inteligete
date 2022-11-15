@@ -11,7 +11,6 @@ import {BsPlus} from 'react-icons/bs';
 const Botellas = () => {
     const styles = useStyles();
     const containerRef = useRef(null);
-    const checked = true;
     const [addGarrafonInfo, setAddGarrafonInfo ] = useState({name: "", code: ""})
     const [add, setAdd] = useState(false);
     const { data: botellas, isFetching } = useGetBotellasQuery();
@@ -27,7 +26,7 @@ const Botellas = () => {
                 <BsPlus size={42}/>
             </Fab>
             </Typography> 
-            <Slide direction="up" in={checked} timeout={1000} container={containerRef.current}>
+            <Slide direction="up" in={!isFetching} timeout={1000} container={containerRef.current}>
                 <Grid container justifyContent="center" spacing={3} mt={2} px={6}>
                     {botellas.map((botella) => (
                         <Grid item xs={12} sm={6} lg={3} xl={2} key={botella.id}> 

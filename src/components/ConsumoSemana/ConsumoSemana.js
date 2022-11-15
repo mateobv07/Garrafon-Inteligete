@@ -25,7 +25,7 @@ ChartJS.register(
     responsive: true,
     plugins: {
       legend: {
-        display: false,
+        display: true,
       },
       title: {
         display: false,
@@ -44,7 +44,7 @@ const ConsumoSemana = ({semana})=> {
             backgroundColor: 'rgba(255, 99, 132, 0.5)',
             tension: 0.4,
             fill: true,
-            
+            label: "litros"
           },
         ],
       };
