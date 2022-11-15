@@ -3,7 +3,7 @@ import { Paper, Typography, Grid } from "@mui/material";
 import useStyles from './styles'
 import bottle from '../../assets/bottle.png'
 
-const PromedioSemanal = () => {
+const PromedioSemanal = ({ cantidad }) => {
     const styles = useStyles();
     
     return (
@@ -14,7 +14,7 @@ const PromedioSemanal = () => {
                 </Grid>
                 <Grid item xs={6} alignItems="center">
                     <h2 >Promedio semanal</h2>
-                    <Typography variant="h5"> 600 ml</Typography>
+                    <Typography variant="h5"> {cantidad} ml</Typography>
                 </Grid>
             </Grid>
         </Paper>

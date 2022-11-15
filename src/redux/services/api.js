@@ -13,10 +13,12 @@ export const waterApi = createApi({
     endpoints: (builder) => ({
         getGarrafones: builder.query({query: () => '/garrafon/my/' }),
         getBotellas: builder.query({query: () => '/botella/my/' }),
+        getMyWeek: builder.query({query: () => '/agua/myWeek/' }),
     }),
 });
 
 export const {
     useGetGarrafonesQuery,
     useGetBotellasQuery,
+    useGetMyWeekQuery,
 } = waterApi;

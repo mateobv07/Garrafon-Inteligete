@@ -23,7 +23,7 @@ const Garrafon = ({ name, amount }) => {
                 </Box>
                 <Box className={styles.content} px={2}>
                     <img src={ImagenGarrafon} alt="garrafon" className={styles.image}/>
-                    <Typography variant="h4" style={{ fontWeight: 600 }} color="#4459e8" mt={1}> {garrafonInfo.amount}% </Typography>
+                    <Typography variant="h4" style={{ fontWeight: 600 }} color="#4459e8" mt={1}> {Math.floor(garrafonInfo.amount * 100/22)}% </Typography>
                 </Box>
             </Paper>
             <Dialog open={editName} onClose={() => setEditName(false)} >

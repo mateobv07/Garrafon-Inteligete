@@ -1,5 +1,7 @@
 import React, { useRef, useState } from "react";
 import { Grid, Fab, Paper, Typography, Dialog, TextField, Button } from "@mui/material";
+import { useGetGarrafonesQuery } from "../../redux/services/api"
+import Loader from "../../components/Loader/loader";
 
 import useStyles from './styles';
 import Garrafon from "../../components/Garrafon/Garrafon"; 
@@ -10,10 +12,12 @@ const Garrafones = () => {
     const styles = useStyles();
     const containerRef = useRef(null);
     const checked = true;
-    const grrafones = [{name: 'Cocina', amount: 39, id: 'csd131'}, {name: 'Sala', amount: 80, id: '23131'}];
     const [addGarrafonInfo, setAddGarrafonInfo ] = useState({name: "", code: ""})
     const [add, setAdd] = useState(false);
+    const { data: grrafones, isFetching } = useGetGarrafonesQuery();
 
+
+    if(isFetching) return <Loader title="Cargando garrafones..." />
     return (
         <div className={styles.mainContainer} ref={containerRef}>
             <Typography variant="h4">Garrafones 
@@ -25,7 +29,7 @@ const Garrafones = () => {
                 <Grid container justifyContent="center" spacing={3} mt={2} px={6}>
                     {grrafones.map((garrafon) => (
                         <Grid item xs={12} sm={6} lg={5} xl={4} key={garrafon.id}> 
-                            <Garrafon name={garrafon.name} id={garrafon.id} amount={garrafon.amount} />
+                            <Garrafon name={garrafon.name} id={garrafon.id} amount={garrafon.cantidad} />
                         </Grid>
                     ))}
                 </Grid>

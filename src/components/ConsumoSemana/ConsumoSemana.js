@@ -21,25 +21,25 @@ ChartJS.register(
     Tooltip,
     Legend
   );
+  const options = {
+    responsive: true,
+    plugins: {
+      legend: {
+        display: false,
+      },
+      title: {
+        display: false,
+        text: 'Chart.js Line Chart',
+      },
+    },
+  };
 
-const ConsumoSemana = ()=> {
-    const options = {
-        responsive: true,
-        plugins: {
-          legend: {
-            display: false,
-          },
-          title: {
-            display: false,
-            text: 'Chart.js Line Chart',
-          },
-        },
-      };
+const ConsumoSemana = ({semana})=> {
     const data = {
-        labels: ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado', 'Domingo'],
+        labels: Object.keys(semana),
         datasets: [
           {
-            data: [12, 45, 54, 43, 43, 43, 6],
+            data: Object.values(semana),
             borderColor: 'rgb(255, 99, 132)',
             backgroundColor: 'rgba(255, 99, 132, 0.5)',
             tension: 0.4,

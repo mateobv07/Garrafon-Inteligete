@@ -2,7 +2,7 @@ import React from "react";
 import { Paper, Typography, Grid } from "@mui/material";
 import useStyles from './styles'
 import bottle from '../../assets/bottle.png'
-const ConsumoHoy = () => {
+const ConsumoHoy = ({ cantidad }) => {
     const styles = useStyles();
     
     return (
@@ -13,7 +13,7 @@ const ConsumoHoy = () => {
                 </Grid>
                 <Grid item xs={6} alignItems="center">
                     <h2 >Hoy</h2>
-                    <Typography variant="h5"> 600 ml</Typography>
+                    <Typography variant="h5"> {cantidad} ml</Typography>
                 </Grid>
             </Grid>
         </Paper>

@@ -14,10 +14,11 @@ const Botellas = () => {
     const checked = true;
     const [addGarrafonInfo, setAddGarrafonInfo ] = useState({name: "", code: ""})
     const [add, setAdd] = useState(false);
-
     const { data: botellas, isFetching } = useGetBotellasQuery();
 
     if(isFetching) return <Loader title="Cargando botellas..." />
+
+
 
     return (
         <div className={styles.mainContainer} ref={containerRef}>
