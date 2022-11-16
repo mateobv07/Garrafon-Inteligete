@@ -6,7 +6,12 @@ export default makeStyles((theme) => ({
         flexDirection: 'column',
         alignItems: 'center',
         paddingBottom: '20px',
-        overflow: 'hidden',
     },
+    statsContainer: {
+        display: 'flex',
+        flexDirection: 'row',
+        paddingBottom: '20px',
+    },
+
 
 }));
