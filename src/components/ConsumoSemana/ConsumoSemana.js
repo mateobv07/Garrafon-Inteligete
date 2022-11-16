@@ -50,7 +50,7 @@ const ConsumoSemana = ({semana})=> {
       };
       return (
         <Paper elevation={8}  sx={{ borderRadius: '15px', padding: '15px'}}>
-            <Line options={options} data={data} />
+            <Line options={options} data={data}/>
         </Paper>
       );
 }
