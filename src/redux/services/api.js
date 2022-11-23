@@ -14,6 +14,7 @@ export const waterApi = createApi({
         getGarrafones: builder.query({query: () => '/garrafon/my/' }),
         getBotellas: builder.query({query: () => '/botella/my/' }),
         getMyWeek: builder.query({query: () => '/agua/myWeek/' }),
+        getMyStadistics: builder.query({query: () => '/agua/myStadistics/' }),
     }),
 });
 
@@ -21,4 +22,5 @@ export const {
     useGetGarrafonesQuery,
     useGetBotellasQuery,
     useGetMyWeekQuery,
+    useGetMyStadisticsQuery,
 } = waterApi;

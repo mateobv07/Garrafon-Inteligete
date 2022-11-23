@@ -14,7 +14,7 @@ const PromedioSemanal = ({ cantidad }) => {
                 </Grid>
                 <Grid item xs={6} alignItems="center">
                     <h2 >Promedio semanal</h2>
-                    <Typography variant="h5"> {cantidad} ml</Typography>
+                    <Typography variant="h5"> {Math.ceil(cantidad)} ml</Typography>
                 </Grid>
             </Grid>
         </Paper>

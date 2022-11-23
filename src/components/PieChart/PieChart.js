@@ -32,7 +32,6 @@ export function PieChart({info}) {
       type: 'pie',
       data: data,
     };
-    console.log('test')
     
     return (
       <Pie options={options} data={data} config={config}/>
