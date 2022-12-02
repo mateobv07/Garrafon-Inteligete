@@ -6,7 +6,7 @@ export const waterApi = createApi({
     baseQuery: fetchBaseQuery({
         baseUrl: 'https://mateobernasconivagas.pythonanywhere.com',
         prepareHeaders: (headers) => {
-            headers.set('Authorization', `Token ${'63cc22aacd5a46737f5267e97a26b09b8bd7e312'}`);
+            headers.set('Authorization', `Token ${localStorage.getItem('token')}`);
             return headers;
         },
     }),

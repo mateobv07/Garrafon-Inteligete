@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, Navigate } from 'react-router-dom';
 import Home from './pages/Home/Home';
 import Garrafones from './pages/Garrafones/Garrafones';
 import Botellas from './pages/Botellas/Botellas';
@@ -24,10 +24,10 @@ function App() {
       ? <SideBar/> : <></>}
       <div className={location.pathname === '/auth' ? styles.authContainer : styles.pagesContainer}>
         <Routes>
-          <Route path="/"  element={<Home/>}/>
-          <Route path="/garrafones"  element={<Garrafones/>}/>
-          <Route path="/botellas"  element={<Botellas/>}/>
-          <Route path="/datos"  element={<Datos/>}/>
+          <Route path="/"  element={localStorage.getItem('token') ? <Home/> : <Navigate replace to="/auth" />}/>
+          <Route path="/garrafones" element={localStorage.getItem('token') ? <Garrafones/> : <Navigate replace to="/auth" />}/>
+          <Route path="/botellas" element={localStorage.getItem('token') ? <Botellas/> : <Navigate replace to="/auth" />}/>
+          <Route path="/datos" element={localStorage.getItem('token') ? <Datos/> : <Navigate replace to="/auth" />}/>
           <Route path="/auth"  element={<Auth/>}/>
         </Routes>
       </div>

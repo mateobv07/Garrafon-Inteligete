@@ -22,7 +22,7 @@ export default makeStyles((theme) => ({
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-
+        padding: '35px',
     }
 
 }));

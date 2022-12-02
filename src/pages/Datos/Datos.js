@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { Typography, Grid } from "@mui/material";
 import TotalWater from '../../components/TotalWater/TotalWater'
+import LatestRefill from '../../components/LatestRefill/LatestRefill'
 import TodayGoal from '../../components/TodayGoal/TodayGoal'
 import GoalStreak from '../../components/GoalStreak/GoalStreak'
 import PieChart from '../../components/PieChart/PieChart'
@@ -13,23 +14,7 @@ const Datos = () => {
     const styles = useStyles();
     const containerRef = useRef(null);
     const { data, isFetching } = useGetMyStadisticsQuery();
-
-    const semana = {
-        'Enero': 30, 
-        'Febrero':40, 
-        'Marzo': 43,
-        'Abril': 82,
-        'Mayo': 90,
-        'Junio': 50,
-        'Julio': 80,
-        'Septiembre': 32,
-        'Octubre': 53,
-        'Noviembre': 34,
-        'Diciembre': 33
-    }
     
-    const info = {type: "garrafones", cantidades: {"Sala": 20, "Cocina": 40}}
-    const info2 = {type: "botellas", cantidades: {"Deportes": 90, "Escuela": 23}}
 
     if(isFetching) return <Loader title="Cargando datos..." />
 
@@ -46,16 +31,16 @@ const Datos = () => {
                         <GoalStreak cantidad={data.daysAchieved}/>
                     </Grid>
                     <Grid item xs={12} md={6} lg={4}>
-                        <TotalWater cantidad={data.cantidad}/>
+                        <LatestRefill cantidad={data.latestRefill}/>
                     </Grid>
                     <Grid item xs={12} md={6} lg={3}>
-                        <PieChart info={info}/>
+                        <PieChart info={{type: "garrafones", cantidades: data.garrafones}}/>
                     </Grid>
                     <Grid item xs={12} md={6} lg={3}>
-                        <PieChart info={info2}/>
+                        <PieChart info={{type: "botellas", cantidades: data.bottles}}/>
                     </Grid>
                     <Grid item xs={12} md={6} lg={6}>
-                        <ConsumoSemana semana={semana}/>
+                        <ConsumoSemana semana={data.meses}/>
                     </Grid>
                     
                 </Grid>

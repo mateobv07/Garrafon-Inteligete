@@ -7,7 +7,7 @@ const TodayGoal = ({ cantidad }) => {
     return (
         <Paper elevation={8} className={styles.paper} sx={{ borderRadius: '15px'}}>
             <h2 >Progreso Hoy</h2>
-            ({cantidad} L)
+            ({Math.ceil(cantidad)} L)
             <Grid container mt={3} alignItems="center">
                 <Grid item xs={12} >
                     2800ml<div className={cantidad >= 2800 ? styles.hundredFilled : styles.hundredEmpty}></div>

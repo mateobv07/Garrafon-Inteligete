@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { MdWaterDrop } from 'react-icons/md'
 import { TbBottle } from 'react-icons/tb'
 import { BsGraphUp } from 'react-icons/bs'
+import { BiLogOut } from 'react-icons/bi'
 import useStyles from './styles'
 
 
@@ -53,6 +54,15 @@ const SideBar = () => {
                             <BsGraphUp size={22} color='#fbffff'/>
                         </ListItemIcon>
                         <Typography variant="h6" color='#fbffff'>Datos</Typography>
+                    </ListItemButton>
+                </ListItem>
+
+                <ListItem disablePadding>
+                    <ListItemButton onClick={() => (localStorage.clear(), navigate('/auth'))}>
+                        <ListItemIcon>
+                            <BiLogOut size={22} color='#fbffff'/>
+                        </ListItemIcon>
+                        <Typography variant="h6" color='#fbffff'>Logout</Typography>
                     </ListItemButton>
                 </ListItem>
             </List>

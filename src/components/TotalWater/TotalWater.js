@@ -13,7 +13,7 @@ const TotalWater = ({ cantidad }) => {
                     <img src={waterDrop} alt="bottle" className={styles.image}/>
                 </Grid>
                 <Grid item xs={6} alignItems="center">
-                    <Typography variant="h3"> {cantidad} L</Typography>
+                    <Typography variant="h4"> {cantidad} L</Typography>
                 </Grid>
             </Grid>
         </Paper>

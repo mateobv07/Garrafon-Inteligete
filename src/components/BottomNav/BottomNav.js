@@ -5,7 +5,7 @@ import { GiWaterGallon } from 'react-icons/gi';
 import { useNavigate } from 'react-router-dom';
 
 const BottomNav = () => {
-    const [value, setValue] = useState(0);
+    const [value, setValue] = useState(1);
     const navigate = useNavigate();
 
     return (
@@ -19,7 +19,7 @@ const BottomNav = () => {
             >
             <BottomNavigationAction label="Garrafones" icon={<GiWaterGallon />} onClick={() => navigate('/garrafones')} />
             <BottomNavigationAction label="Home" icon={<AiOutlineHome />} onClick={() => navigate('/')}/>
-            <BottomNavigationAction label="Test" icon={<GiWaterGallon />} onClick={() => navigate('/')}/>
+            <BottomNavigationAction label="Datos" icon={<GiWaterGallon />} onClick={() => navigate('/datos')}/>
             </BottomNavigation>
         </Paper>
     );

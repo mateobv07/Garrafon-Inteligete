@@ -3,6 +3,7 @@ import { Paper, Box, Typography, Dialog, TextField, Button } from "@mui/material
 import useStyles from './styles';
 import {MdOutlineEdit} from 'react-icons/md';
 import ImagenBotella from '../../assets/bottle.png'
+import axios from 'axios';
 
 const Garrafon = ({ name, id, lastUpdate }) => {
     const [editName, setEditName] = useState(false);
@@ -14,6 +15,20 @@ const Garrafon = ({ name, id, lastUpdate }) => {
         let newDate = Intl.DateTimeFormat('es-MX', { dateStyle: 'full', timeStyle: 'short' }).format(new Date(lastUpdate));
         setGarrafonInfo({name: name, lastUpdate: newDate})
     }, [name, lastUpdate])
+
+    const updateBotella = () => {
+        axios({
+            method: 'PATCH',
+            url: process.env.REACT_APP_BASE_URL + 'botella/updateOne/',
+            headers: {Authorization: "Token " + localStorage.getItem('token')},
+            data: {id:id, name: botellaInfo.name }
+          })
+          .then((res) => {
+            console.log(res)
+          })
+          .catch((err) => console.log(err))
+        setEditName(false);
+    }
 
     return (
         <>
@@ -36,7 +51,7 @@ const Garrafon = ({ name, id, lastUpdate }) => {
                         value={botellaInfo.name}
                         onChange={(event) => setGarrafonInfo({...botellaInfo, name: event.target.value})}
                     />
-                    <Button variant="contained" sx={{ mx: 3, mt:3 }} onClick={() => setEditName(false)}>Guardar</Button>
+                    <Button variant="contained" sx={{ mx: 3, mt:3 }} onClick={() => updateBotella()}>Guardar</Button>
                 </Paper>
             </Dialog>
 
