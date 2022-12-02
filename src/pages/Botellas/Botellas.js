@@ -1,7 +1,6 @@
 import React, { useRef, useState } from "react";
 import { Grid, Fab, Paper, Typography, Dialog, TextField, Button } from "@mui/material";
 import { useGetBotellasQuery } from "../../redux/services/api"
-import { useSelector } from 'react-redux';
 import Loader from "../../components/Loader/loader";
 import useStyles from './styles';
 import Botella from "../../components/Botella/Botella"; 

@@ -13,6 +13,12 @@ import useStyles from './styles'
 const SideBar = () => {
     const styles = useStyles();
     const navigate = useNavigate();
+
+    const logOut = () => {
+        localStorage.clear();
+         navigate('/auth');
+    }
+
     return (
         <Box className={styles.sideBar} color="#4459e8" sx={{ boxShadow: 14 }}> 
             <div className={styles.titleContainer} onClick={() => navigate('/')}>
@@ -58,7 +64,7 @@ const SideBar = () => {
                 </ListItem>
 
                 <ListItem disablePadding>
-                    <ListItemButton onClick={() => (localStorage.clear(), navigate('/auth'))}>
+                    <ListItemButton onClick={() => logOut()}>
                         <ListItemIcon>
                             <BiLogOut size={22} color='#fbffff'/>
                         </ListItemIcon>
